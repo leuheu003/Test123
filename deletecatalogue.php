@@ -2,8 +2,8 @@
 session_start();
 require_once './functions.php';
 
-if (isset($_POST['cId'])) {
-    $cId = sanitizeString($_POST['cId']);
+if (isset($_POST['cid'])) {
+    $cId = sanitizeString($_POST['cid']);
     $query = "DELETE FROM Catalogue WHERE cId = '$cId'";
     queryMysql($query);
     header("Location: loadcatalogue.php");

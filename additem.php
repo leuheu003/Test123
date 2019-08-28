@@ -4,18 +4,18 @@ require_once 'header.php';
 //getting the data
 $error = $msg = "";
 if (isset($_POST['add'])) { //adding
-    $iId = sanitizeString($_POST['iId']);
-    $iName = sanitizeString($_POST['iName']);
-    $iDescription = sanitizeString($_POST['iDescription']);
-    $iPrice = sanitizeString($_POST['iPrice']);
-    $iStatus = sanitizeString($_POST['iStatus']);
-    $iSize = sanitizeString($_POST['iSize']);    
+    $iId = sanitizeString($_POST['iid']);
+    $iName = sanitizeString($_POST['iname']);
+    $iDescription = sanitizeString($_POST['idescription']);
+    $iPrice = sanitizeString($_POST['iprice']);
+    $iStatus = sanitizeString($_POST['istatus']);
+    $iSize = sanitizeString($_POST['isize']);    
     $sImage = "";
     $extension = "";
     //Process the uploaded image
-    if (isset($_FILES['iImage']) && $_FILES['iImage']['size'] != 0) {
-        $temp_name = $_FILES['iImage']['tmp_name'];
-        $name = $_FILES['iImage']['name'];
+    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
+        $temp_name = $_FILES['iimage']['tmp_name'];
+        $name = $_FILES['iimage']['name'];
         $parts = explode(".", $name);
         $lastIndex = count($parts) - 1;
         $extension = $parts[$lastIndex];
@@ -24,10 +24,10 @@ if (isset($_POST['add'])) { //adding
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
     }
-    $catalogueId = sanitizeString($_POST['catalogueId']);
+    $cId = sanitizeString($_POST['cid']);
     //TODO: Do the PHP validation here to protect your server
     //Add the student
-    $query = "INSERT INTO Item values ('$iId','$iName','$iDescription','$iPrice','$iStatus','$iSize','$iImage','$catalogueId')";
+    $query = "INSERT INTO Item values ('$iId','$iName','$iDescription','$iPrice','$iStatus','$iSize','$iImage','$cId')";
     $result = queryMySql($query);
     if (!$result) {
         $error = $error . "<br>Can't add Item, please try again";
@@ -44,28 +44,28 @@ if (isset($_POST['add'])) { //adding
         <legend>Add Item</legend>
         
         ID: <br>
-        <input type="text" name="iId" size="15" maxlength="15" placeholder="(any thing)"
+        <input type="text" name="iid" size="15" maxlength="15" placeholder="(any thing)"
                required /><br>
         Name: <br>
-        <input type="text" name="iName" maxlength="100" required/><br>
-        Desciption:<br>
-        <textarea maxlength="500" name="iDescription"></textarea><br>
+        <input type="text" name="iname" maxlength="100" required/><br>
+        Description:<br>
+        <textarea maxlength="500" name="idescription"></textarea><br>
         Price:<br>
-        <input type="number" name="iPrice" maxlength="20"/><br>
+        <input type="number" name="iprice" maxlength="20"/><br>
         Status:<br>
-        <input type="text" name="iStatus" maxlength="30"/><br>
-        Amount:<br>
-        <input type="text" name="iSize" maxlength="15"/><br>     
+        <input type="text" name="istatus" maxlength="30"/><br>
+        Size:<br>
+        <input type="text" name="isize" maxlength="15"/><br>     
         Image:<br>
-        <input type="file" name="iImage"/><br>
+        <input type="file" name="iimage"/><br>
         Catalogue:<br>
-        <select name="catalogueId">
+        <select name="cid">
             <?php
-            $query = "SELECT cId, cName FROM catalogue";
+            $query = "SELECT cid, cname FROM catalogue";
             $batches = queryMysql($query);
             while ($batch = mysqli_fetch_array($batches)) {
-                $cId = $batch[0];
-                $cName = $batch[1];
+                $cId = $batch['cid'];
+                $cName = $batch['cname'];
                 echo "<option value='$cId'>$cName</option>";
             }
             ?>

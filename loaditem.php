@@ -1,7 +1,7 @@
 <?php
 require_once './header.php';
 
-$query = "SELECT iId, iName, iDescription, iPrice, iStatus, iAmount, iImage FROM Item";
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
 if(isset($_POST['keyword'])){
     $keyword = sanitizeString($_POST['keyword']);
     $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
@@ -34,13 +34,13 @@ if (!$result){
     </tr>
     <?php
     while ($row = mysqli_fetch_array($result)) {
-        $iId = $row[0];
-        $iName = $row[1];
-        $iDescription = $row[2];
-        $iPrice = $row[3];
-        $iStatus = $row[4];
-        $iSize = $row[5];
-        $iImage = $row[6];             
+        $iId = $row['iid'];
+        $iName = $row['iname'];
+        $iDescription = $row['idescription'];
+        $iPrice = $row['iprice'];
+        $iStatus = $row['istatus'];
+        $iSize = $row['isize'];
+        $iImage = $row['iimage'];             
         echo "<tr>";
         echo "<td>$iId</td>";
         echo "<td>$iName</td>";
@@ -52,11 +52,11 @@ if (!$result){
         ?>
         <td>
             <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
+                <input type="hidden" name="iId" value="<?php echo $row['iid'] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="updateitem.php" method="post">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
+                <input type="hidden" name="iId" value="<?php echo $row['iid'] ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>
