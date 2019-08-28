@@ -1,7 +1,7 @@
 <?php
 require_once './header.php';
 //Check to make sure that user is logged in first
-require_once './restrictedsession.php';
+
 $error = $msg = "";
 if (isset($_POST['iName'])) { //updating
     $iId = sanitizeString($_POST['iId']);

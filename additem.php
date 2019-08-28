@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require_once 'restrictedsession.php';
+
 //getting the data
 $error = $msg = "";
 if (isset($_POST['add'])) { //adding
