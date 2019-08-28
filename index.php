@@ -100,21 +100,7 @@
     <body>
         <?php
 require_once './functions.php';
-//load items
-$query = "SELECT iId, iName, iDescription, iPrice, iStatus, iSize, iImage FROM Item ";
-$result = queryMysql($query);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
-//load catalogue
-$query1 = "SELECT cId, cName, cDescription from Catalogue";
-$result1 = queryMysql($query1);
-$error1 = $msg1 = "";
-if (!$result1){
-    $error1 = "Couldn't load data, please try again.";
-}
-?>
+
 
         <div class="container">
             <center><img src="images/ToyStore.jpg"></center>
