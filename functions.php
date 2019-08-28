@@ -12,7 +12,7 @@
         $db["pass"],
         ltrim($db["path"], "/")
     ));
-    echo 'done';
+
  // }
   
 
