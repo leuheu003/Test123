@@ -1,0 +1,24 @@
+.fitContent{
+    width: fit-content;
+}
+.error{
+    color: red;
+}
+
+/*style for the table */
+.tbl{
+    background-color: darkgray;
+    margin-left: 40px;
+}
+.tbl tr:nth-child(odd){
+    background-color: #f6f6f6;
+}
+.tbl tr:nth-child(even){
+    background-color: bisque;
+}
+.tbl tr td, th{
+    padding: 5px;
+}
+.frminline{
+    display: inline;
+}
