@@ -1,11 +1,7 @@
 <?php
 require_once './header.php';
 
-$query = "SELECT cid, cname, cdescription from Catalogue";
-if(isset($_POST['keyword'])){
-    $keyword = sanitizeString($_POST['keyword']);
-    $query = $query . " WHERE cname LIKE '%$keyword%' OR cdescription LIKE '%$keyword%'";
-}
+$query = "SELECT cid, cname, cdescription from catalogue";
 $result = queryMysql($query);
 $error = $msg = "";
 if (!$result){
@@ -13,14 +9,6 @@ if (!$result){
 }
 ?>
 <br><br>
- 
-<div>
-    <form action="loadcatalogue.php" method="post">
-        Search catalogue:
-        <input type="search" name="keyword"/>
-        <input type="submit" value="Go"/>
-    </form>
-</div>
 <br>
 <table class="tbl">
     <tr>
