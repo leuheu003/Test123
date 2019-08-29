@@ -7,7 +7,7 @@ session_start();
         <link rel="stylesheet" href="css/menu_style.css?v=<?php echo time();?>" type="text/css"/>
         <link rel="stylesheet" href="css/style.css?v=<?php echo time();?>" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <title>ATN login/logout manager</title>
+        <title>ATN Manager</title>
     </head>
     <body>
     <center><img src="images/ToyStore.jpg"</center>
