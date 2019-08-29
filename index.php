@@ -45,7 +45,7 @@
                 box-sizing: border-box;
             }
             .des{
-                color: greenyellow;
+                color: red;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
