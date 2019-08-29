@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li class="selected"><a href="index.php">Home</a></li>
+        
         <li>
             <a href="">Manage Catalogue</a>
             <ul>
