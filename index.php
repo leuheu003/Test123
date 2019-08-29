@@ -79,7 +79,7 @@
                 list-style: none;
             }
             .nav a{
-                color:red;
+                color:orange;
                 font-size: 30px;
                 text-decoration: none;
                 line-height: 50px;
