@@ -115,8 +115,8 @@ if (!$result){
                 
                 <div class="nav">
                     <ul>
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="./menu_admin.php">Admin</a></li>
+                        <center><li><a href="./index.php">Home</a></li></center>
+                        <center><li><a href="./menu_admin.php">Admin</a></li></center>
                         <li><a href="#Lego">Lego</a></li>
                         <li><a href="#Figure">Figure</a></li>
                         <li><a href="#Clay">Clay</a></li>
