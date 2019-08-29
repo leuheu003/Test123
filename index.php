@@ -45,7 +45,7 @@
                 box-sizing: border-box;
             }
             .des{
-                color: red;
+                color: green;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
@@ -90,10 +90,10 @@
                 float: left;
             }
             .nav a:hover{
-                color: #792323;
+                color: black;
             }
             .nav li:hover{
-                background-color:#DCF4F6;
+                background-color:red;
             }
         </style>
     </head>
