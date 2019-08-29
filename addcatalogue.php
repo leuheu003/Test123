@@ -3,8 +3,8 @@ require_once './header.php';
 if (isset($_POST['cid'], $_POST['cname'], $_POST['cdescription'])) {
     $sql = "INSERT INTO catalogue(cid, cname, cdescription) values(:cid , :cname, :cdescription)";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':caid', $_POST['caid'], PDO::PARAM_STR);
-    $stmt->bindValue(':caname', $_POST['caname'], PDO::PARAM_STR);
+    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
     $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
     $pdoExec = $stmt->execute();
     

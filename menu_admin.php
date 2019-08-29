@@ -15,7 +15,7 @@
                 <li><a href="loaditem.php">View/Search/Update/Delete item</a></li>
             </ul>
         </li>
-        <li><a href="logout.php">Logout <?php echo $userstr; ?></a></li>
+       
     </ul>
 </nav>
 
