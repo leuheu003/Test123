@@ -26,11 +26,11 @@ $resultSet = $result->fetchAll();
         ?>
         <td>
             <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="cId" value="<?php echo $row['cid'] ?>" />
+                <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="updatecatalogue.php" method="post">
-                <input type="hidden" name="cId" value="<?php echo $row['cid'] ?>" />
+                <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>
