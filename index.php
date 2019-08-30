@@ -103,10 +103,7 @@ require_once './functions.php';
 //load items
 $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item ";
 $result = queryMysql($query);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
+
 ?>
 
         <div class="container">

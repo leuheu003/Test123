@@ -1,25 +1,14 @@
 <?php
 require_once './header.php';
 
-$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
-if(isset($_POST['keyword'])){
-    $keyword = sanitizeString($_POST['keyword']);
-    $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
-}
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item";
 $result = queryMysql($query);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
+$result = queryMysql($query);
+$result->setFetchMode(PDO::FETCH_ASSOC);
+$result->execute();
+$resultSet = $result->fetchAll();
 ?>
 <br><br>
-<div>
-    <form action="loaditem.php" method="post">
-        Search Product:
-        <input type="search" name="keyword"/>
-        <input type="submit" value="Go"/>
-    </form>
-</div>
 <br>
 <table class="tbl">
     <tr>
@@ -33,7 +22,7 @@ if (!$result){
         <th>Options</th>
     </tr>
     <?php
-    while ($row = mysqli_fetch_array($result)) {
+    foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -48,15 +37,15 @@ if (!$result){
         echo "<td>$iPrice</td>";
         echo "<td>$iStatus</td>";
         echo "<td>$iSize</td>";
-        echo "<td ><img src='./images/item/". $iImage . "' height='200px'></td>";
+        echo "<td ><img src='./images/". $iImage . "' height='200px'></td>";
         ?>
         <td>
             <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="iId" value="<?php echo $row['iid'] ?>" />
+                <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="updateitem.php" method="post">
-                <input type="hidden" name="iId" value="<?php echo $row['iid'] ?>" />
+                <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>
