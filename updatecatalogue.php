@@ -4,11 +4,17 @@ require_once 'header.php';
 if (isset($_POST['cname'], $_POST['cdescription'])) { //updating
     $cId = $_POST['cid'];
     
-        $sql = "UPDATE catalogue SET cname = ':cname', cdescription = ':cdescription' WHERE cId = '$cId'";
+        $sql = "UPDATE catalogue SET cname = :cname, cdescription = :cdescription WHERE cId = '$cId'";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
         $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
         $pdoExec = $stmt->execute();
+        if($pdoExec)
+    {
+        echo 'Data Updated';
+    }else{
+        echo 'Data Not Updated';
+    }
     }
 //for loading the data to the form
 if (isset($_POST['cid'])) {
