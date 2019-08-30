@@ -3,28 +3,31 @@ require_once './header.php';
 //Check to make sure that user is logged in first
 
 $error = $msg = "";
-if (isset($_POST['iname'])) { //updating
-    $iId = sanitizeString($_POST['iid']);
-    $iName = sanitizeString($_POST['iname']);
-    $iDescription = sanitizeString($_POST['idescription']);
-    $iPrice = sanitizeString($_POST['iprice']);
-    $iStatus = sanitizeString($_POST['istatus']);
-    $iSize = sanitizeString($_POST['isize']);
-    $cId = sanitizeString($_POST['cid']);
-    $uId = $_SESSION['uid'];
-    $query = "UPDATE Item SET iname = '$iName', idescription = '$iDescription', iprice = '$iPrice', istatus = '$iStatus', isize = '$iSize' WHERE iid = '$iId'";
-    $result = queryMysql($query);
-    if (!$result) {
-        $error = "Couldn't update item $iName, please try again";
-    } else {
-        $msg = "Updated $iName successfully";
+if (isset($_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'])) { //updating
+    $iId = $_POST['iid'];
+    $sql = "UPDATE Item SET iname = ':iname', idescription = ':idescription', iprice = ':iprice', istatus = ':istatus', isize = ':isize' WHERE iid = '$iId'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
+    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
+    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
+    $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
+    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
+    $pdoExec = $stmt->execute();
+    
+        // check if mysql insert query successful
+    if($pdoExec)
+    {
+        echo 'Data Inserted';
+    }else{
+        echo 'Data Not Inserted';
     }
+    
 }
 //for loading the data to the form
-if (isset($_POST['iId'])) {
-    $iId = sanitizeString($_POST['iId']);
+if (isset($_POST['iid'])) {
+    $iId = sanitizeString($_POST['iid']);
     //Load the current data to that batch
-    $query = "SELECT iname, idescription, iprice, istatus, isize FROM Item WHERE iid = '$iId'";
+    $query = "SELECT iname, idescription, iprice, istatus, isize FROM item WHERE iid = '$iId'";
     $result = queryMysql($query);
     $row = mysqli_fetch_array($result);
     if ($row) {
@@ -41,7 +44,7 @@ if (isset($_POST['iId'])) {
     <fieldset>
         <legend>Update Item</legend>
         <div class="error"><?php echo $error; ?></div>
-        <input type="hidden" value="<?php echo $iId; ?>" name="iId"/>
+        <input type="hidden" value="<?php echo $iId; ?>" name="iid"/>
         Name: </br>
         <input type="text" id="iName" name="iname" required value="<?php echo $iName; ?>"/><br>
         Description: </br>
