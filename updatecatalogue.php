@@ -24,7 +24,7 @@ if (isset($_POST['cid'])) {
 }
 ?>
 <br><br>
-<form action="updatecatalogue.php" method="POST">
+<form action="updatecatalogue.php" method="post">
     <fieldset>
         <legend>Update Catalogue</legend>
         <input type="hidden" value="<?php echo $cId; ?>" name="cid"/>
