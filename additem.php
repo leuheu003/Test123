@@ -2,10 +2,10 @@
 require_once 'header.php';
 
 //getting the data
-$error = $msg = "";
+
 if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'],  $_POST['cid'])) { //adding
     $iId = $_POST['iid'];
-    $sImage = "";
+    $iImage = "";
     $extension = "";
     //Process the uploaded image
     if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
@@ -29,7 +29,7 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
     $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
     $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
     $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
-    $stmt->bindValue(':iimage', $sImage, PDO::PARAM_STR);
+    $stmt->bindValue(':iimage', $iImage, PDO::PARAM_STR);
     $pdoExec = $stmt->execute();
     
         // check if mysql insert query successful
