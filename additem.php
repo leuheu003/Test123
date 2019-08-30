@@ -3,13 +3,8 @@ require_once 'header.php';
 
 //getting the data
 $error = $msg = "";
-if (isset($_POST['add'])) { //adding
-    $iId = sanitizeString($_POST['iid']);
-    $iName = sanitizeString($_POST['iname']);
-    $iDescription = sanitizeString($_POST['idescription']);
-    $iPrice = sanitizeString($_POST['iprice']);
-    $iStatus = sanitizeString($_POST['istatus']);
-    $iSize = sanitizeString($_POST['isize']);    
+if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'])) { //adding
+    $iId = $_POST['iid'];
     $sImage = "";
     $extension = "";
     //Process the uploaded image
@@ -24,15 +19,24 @@ if (isset($_POST['add'])) { //adding
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
     }
-    $cId = sanitizeString($_POST['cid']);
-    //TODO: Do the PHP validation here to protect your server
-    //Add the student
-    $query = "INSERT INTO Item values ('$iId','$iName','$iDescription','$iPrice','$iStatus','$iSize','$iImage','$cId')";
-    $result = queryMySql($query);
-    if (!$result) {
-        $error = $error . "<br>Can't add Item, please try again";
-    } else {
-        $msg = "Added $iName successfully!";
+   
+    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage) values(:cid , :cname, :cdescription, :iprice, :istatus, :isize, :iimage)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
+    $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
+    $stmt->bindValue(':price', $_POST['cprice'], PDO::PARAM_STR);
+    $stmt->bindValue(':status', $_POST['cstatus'], PDO::PARAM_STR);
+    $stmt->bindValue(':size', $_POST['csize'], PDO::PARAM_STR);
+    $stmt->bindValue(':image',$sImage, PDO::PARAM_STR);
+    $pdoExec = $stmt->execute();
+    
+        // check if mysql insert query successful
+    if($pdoExec)
+    {
+        echo 'Data Inserted';
+    }else{
+        echo 'Data Not Inserted';
     }
 }
 ?>
@@ -62,10 +66,13 @@ if (isset($_POST['add'])) { //adding
         <select name="cid">
             <?php
             $query = "SELECT cid, cname FROM catalogue";
-            $batches = queryMysql($query);
-            while ($batch = mysqli_fetch_array($batches)) {
-                $cId = $batch['cid'];
-                $cName = $batch['cname'];
+            $result = queryMysql($query);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+            $resultSet = $result->fetchAll();
+           foreach ($resultSet as $row) {
+                $cId = $row['cid'];
+                $cName = $row['cname'];
                 echo "<option value='$cId'>$cName</option>";
             }
             ?>
