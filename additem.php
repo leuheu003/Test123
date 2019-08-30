@@ -20,7 +20,7 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
         move_uploaded_file($temp_name, $destination);
     }
    
-    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values (:iid , :iname, :idescription, :iprice, :istatus, :isize, :iimage, :cid)";
+    $sql = "INSERT INTO item(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values (:iid , :iname, :idescription, :iprice, :istatus, :isize, :iimage, :cid)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
