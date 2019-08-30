@@ -3,7 +3,6 @@ require_once './header.php';
 
 $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item";
 $result = queryMysql($query);
-$result = queryMysql($query);
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
 $resultSet = $result->fetchAll();

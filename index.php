@@ -142,13 +142,14 @@ $result = queryMysql($query);
                     <div class="" id="Lego"><h2>Lego</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Bag%'  ORDER BY cName";
+     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Lego%'  ORDER BY cname";
      $result = queryMysql($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = mysqli_fetch_array($result)) {
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -187,13 +188,14 @@ $result = queryMysql($query);
                     <div class=""id="Figure"><h2>Figure</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Leather%'  ORDER BY cName";
+    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Clay%'  ORDER BY cname";
      $result = queryMysql($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = mysqli_fetch_array($result)) {
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -233,13 +235,14 @@ $result = queryMysql($query);
                     <div class=""id="Clay"><h2>Clay</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Pants%'  ORDER BY cName";
+    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Figure%'  ORDER BY cname";
      $result = queryMysql($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = mysqli_fetch_array($result)) {
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
