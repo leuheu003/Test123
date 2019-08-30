@@ -25,7 +25,7 @@ if (isset($_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatu
 }
 //for loading the data to the form
 if (isset($_POST['iid'])) {
-    $iId = sanitizeString($_POST['iid']);
+    $iId = $_POST['iid'];
     //Load the current data to that batch
     $query = "SELECT iname, idescription, iprice, istatus, isize FROM item WHERE iid = '$iId'";
     $result = queryMysql($query);
@@ -43,7 +43,6 @@ if (isset($_POST['iid'])) {
 <form action="updateitem.php" method="POST">
     <fieldset>
         <legend>Update Item</legend>
-        <div class="error"><?php echo $error; ?></div>
         <input type="hidden" value="<?php echo $iId; ?>" name="iid"/>
         Name: </br>
         <input type="text" id="iName" name="iname" required value="<?php echo $iName; ?>"/><br>
@@ -56,7 +55,6 @@ if (isset($_POST['iid'])) {
         Amount: </br>
         <input type="text"  name="isize" required value="<?php echo $iSize; ?>"/><br><br>
         <input type="submit" value="Update"/>
-        <div><?php echo $msg; ?></div>
     </fieldset>
 </form>
 </body>
