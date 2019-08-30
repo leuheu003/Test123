@@ -3,7 +3,7 @@ require_once 'header.php';
 
 //getting the data
 $error = $msg = "";
-if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'],  $_POST['caid'])) { //adding
+if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'],  $_POST['cid'])) { //adding
     $iId = $_POST['iid'];
     $sImage = "";
     $extension = "";
