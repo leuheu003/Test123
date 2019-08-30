@@ -15,12 +15,12 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
         $lastIndex = count($parts) - 1;
         $extension = $parts[$lastIndex];
         $iImage = "$iId.$extension";
-        $destination = "./images/item/$iImage";
+        $destination = "./images/$iImage";
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
     }
    
-    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values(:cid , :cname, :cdescription, :iprice, :istatus, :isize, :iimage, :cid)";
+    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values(:iid , :cname, :cdescription, :iprice, :istatus, :isize, :iimage, :cid)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
