@@ -12,7 +12,7 @@ if (isset($_POST['cname'], $_POST['cdescription'])) { //updating
     }
 //for loading the data to the form
 if (isset($_POST['cid'])) {
-    $cId = sanitizeString($_POST['cid']);
+    $cId = $_POST['cid'];
     //Load the current data to that batch
     $query = "SELECT cname, cdescription FROM Catalogue WHERE cid = '$cId'";
     $result = queryMysql($query);
