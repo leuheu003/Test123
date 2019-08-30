@@ -3,7 +3,7 @@ require_once 'header.php';
 
 //getting the data
 $error = $msg = "";
-if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'])) { //adding
+if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'],  $_POST['caid'])) { //adding
     $iId = $_POST['iid'];
     $sImage = "";
     $extension = "";
@@ -20,7 +20,7 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
         move_uploaded_file($temp_name, $destination);
     }
    
-    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values(:iid , :cname, :cdescription, :iprice, :istatus, :isize, :iimage, :cid)";
+    $sql = "INSERT INTO catalogue(iid,iname,idescription,iprice,istatus,isize,iimage,cid) values (:iid , :iname, idescription, :iprice, :istatus, :isize, :iimage, :cid)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
@@ -29,7 +29,7 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
     $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
     $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
     $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
-    $stmt->bindValue(':iimage',$sImage, PDO::PARAM_STR);
+    $stmt->bindValue(':iimage', $sImage, PDO::PARAM_STR);
     $pdoExec = $stmt->execute();
     
         // check if mysql insert query successful
@@ -42,10 +42,9 @@ if (isset($_POST['iid'],$_POST['iname'],$_POST['idescription'],$_POST['iprice'],
 }
 ?>
 <br><br>
-<form action="additem.php" method="POST" enctype="multipart/form-data">
+<form action="additem.php" method="post" enctype="multipart/form-data">
     <fieldset>
-        <div class="error"><?php echo $error; ?></div>
-        <div class="msg"><?php echo $msg; ?></div>
+       
         <legend>Add Item</legend>
         
         ID: <br>
