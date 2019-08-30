@@ -1,9 +1,7 @@
  <?php
 require_once 'header.php';
 //Check to make sure that user is logged in first
-
-
-if (isset($_POST['cname'])) { //updating
+if (isset($_POST['cname'], $_POST['cdescription'])) { //updating
     $cId = $_POST['cid'];
     
         $sql = "UPDATE catalogue SET cname = ':cname', cdescription = ':cdescription' WHERE cId = '$cId'";
@@ -29,7 +27,6 @@ if (isset($_POST['cid'])) {
 <form action="updatecatalogue.php" method="POST">
     <fieldset>
         <legend>Update Catalogue</legend>
-        <div class="error"><?php echo $error; ?></div>
         <input type="hidden" value="<?php echo $cId; ?>" name="cid"/>
          Name: </br>
         <input type="text" id="cName" name="cname" required value="<?php echo $cName; ?>"/><br>
