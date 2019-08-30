@@ -5,7 +5,7 @@ require_once './header.php';
 $error = $msg = "";
 if (isset($_POST['iname'],$_POST['idescription'],$_POST['iprice'],$_POST['istatus'],$_POST['isize'])) { //updating
     $iId = $_POST['iid'];
-    $sql = "UPDATE Item SET iname = ':iname', idescription = ':idescription', iprice = ':iprice', istatus = ':istatus', isize = ':isize' WHERE iid = '$iId'";
+    $sql = "UPDATE Item SET iname = :iname, idescription = :idescription, iprice = :iprice, istatus = :istatus, isize = :isize WHERE iid = '$iId'";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
     $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
@@ -52,7 +52,7 @@ if (isset($_POST['iid'])) {
         <input type="text"  name="iprice" required value="<?php echo $iPrice; ?>"/><br>
         Status: </br>
         <input type="text"  name="istatus" required value="<?php echo $iStatus; ?>"/><br>
-        Amount: </br>
+        Size: </br>
         <input type="text"  name="isize" required value="<?php echo $iSize; ?>"/><br><br>
         <input type="submit" value="Update"/>
     </fieldset>
