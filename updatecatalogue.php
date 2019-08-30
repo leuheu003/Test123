@@ -2,28 +2,21 @@
 require_once 'header.php';
 //Check to make sure that user is logged in first
 
-$error = $msg = "";
+
 if (isset($_POST['cname'])) { //updating
-    $cId = sanitizeString($_POST['cid']);
-    $cName = sanitizeString($_POST['cname']);
-    $cDescription = sanitizeString($_POST['cdescription']);
-    $uId = $_SESSION['uid'];
-    //
-     
-        $query = "UPDATE Catalogue SET cname = '$cName', cdescription = '$cDescription', lastModifiedBy = '$uId' WHERE cId = '$cId'";
-        $result = queryMysql($query);
-        if (!$result) {
-            $error = "Couldn't update Catalogue $cName, please try again";
-        } else {
-            $msg = "Updated $cName successfully";
-        }
+    $cId = $_POST['cid'];
     
-}
+        $sql = "UPDATE catalogue SET cname = ':cname', cdescription = ':cdescription' WHERE cId = '$cId'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
+        $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
+        $pdoExec = $stmt->execute();
+    }
 //for loading the data to the form
-if (isset($_POST['cId'])) {
-    $cId = sanitizeString($_POST['cId']);
+if (isset($_POST['cid'])) {
+    $cId = sanitizeString($_POST['cid']);
     //Load the current data to that batch
-    $query = "SELECT cname, cdescription FROM Catalogue WHERE cId = '$cId'";
+    $query = "SELECT cname, cdescription FROM Catalogue WHERE cid = '$cId'";
     $result = queryMysql($query);
     $row = mysqli_fetch_array($result);
     if ($row) {
