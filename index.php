@@ -99,7 +99,7 @@
             }
         </style>
     </head>
-    <body style="max-width: 1800px; background-image: url(images/ToyBackgroud.jpg)>
+    <body style="max-width: 1800px; background-image: url(images/ToyBackgroud.jpg)">
         <?php
 require_once './functions.php';
 //load items
