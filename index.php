@@ -113,10 +113,10 @@ $result = queryMysql($query);
                 <div class="nav">
                     <ul>
                         <li><a href="./index.php">Home</a></li>
-                        <li><a href="./header.php">Admin</a></li>
                         <li><a href="#Lego">Lego</a></li>
                         <li><a href="#Figure">Figure</a></li>
                         <li><a href="#Clay">Clay</a></li>
+                        <li><a href="./header.php">Manage</a></li>
 
                     </ul>
 
