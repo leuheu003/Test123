@@ -164,7 +164,7 @@ $result = queryMysql($query);
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
-        <div class='w3-container w3-orange w3-center w3-padding-20'> 
+        <div class='w3-container w3-green w3-center w3-padding-20'> 
           <span onclick=\"document.getElementById('$iName').style.display='none';\"
          class='w3-button w3-orange w3-xlarge w3-display-topright'>×</span>
           <h2>$iName</h2>
