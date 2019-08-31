@@ -281,6 +281,7 @@ $result = queryMysql($query);
                         
             </div>
             <div class="footer">
+                <div>©2019 Copyright Pham Duc Long</div>
             </div>
         </div>
     </body>
