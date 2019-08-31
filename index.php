@@ -4,7 +4,10 @@
         <title>ATN Toy Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
+        <style type="text/css">
+            body{
+                background-image:url(C:/Users/pro_k/Documents/GitHub/Test123/images/ToyBackground.jpg);
+            }
             .container{
                 width: 100%;
                 margin: 0 auto;
@@ -111,7 +114,6 @@ $result = queryMysql($query);
             <div class="header">
                 
                 <div class="nav">
-                    <center>
                     <ul>
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="#Lego">Lego</a></li>
@@ -119,7 +121,6 @@ $result = queryMysql($query);
                         <li><a href="#Clay">Clay</a></li>
                         <li><a href="./header.php">Manage</a></li>
                     </ul>
-                    </center>
 
                 </div>
             </div>
