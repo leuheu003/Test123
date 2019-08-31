@@ -86,6 +86,9 @@
                 padding: 0 15px;
                 display: block;
             }
+            .nav li{
+                float: inside;
+            }
             .nav a:hover{
                 color: black;
             }
