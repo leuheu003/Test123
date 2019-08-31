@@ -87,7 +87,7 @@
                 display: block;
             }
             .nav li{
-                float: center;
+                float: left;
             }
             .nav a:hover{
                 color: black;
@@ -112,11 +112,13 @@ $result = queryMysql($query);
                 
                 <div class="nav">
                     <ul>
+                    <left>
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="#Lego">Lego</a></li>
                         <li><a href="#Figure">Figure</a></li>
                         <li><a href="#Clay">Clay</a></li>
-                        <li><a href="./header.php">Manage</a></li>
+                        <li><a href="./header.php">Manage</a></li>\
+                    </left>
                     </ul>
 
 
