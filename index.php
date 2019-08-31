@@ -175,8 +175,8 @@ $result = queryMysql($query);
           </div>
           <div class='w3-half w3-left'>
               <button><h3>Price: $iPrice$</h3></button>
-              <p>$iDescription.</p>
-              <h4>$iSize</h4>                           
+              <p>Description: $iDescription.</p>
+              <h4>Size: $iSize</h4>                           
           </div>                                                    
         </div>
         <button class='w3-button w3-green w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
@@ -219,9 +219,9 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iPrice$</h3>
-              <p>$iDescription.</p>
-              <h4>$iSize</h4>                           
+              <button><h3>Price: $iPrice$</h3></button>
+              <p>Description: $iDescription.</p>
+              <h4>Size: $iSize</h4>                           
           </div>                                                    
         </div>
         <button class='w3-button w3-pink w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
@@ -264,9 +264,9 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iPrice$</h3>
-              <p>$iDescription.</p>
-              <h4>$iSize</h4>                           
+              <button><h3>Price: $iPrice$</h3></button>
+              <p>Descripton: $iDescription.</p>
+              <h4>Size: $iSize</h4>                           
           </div>                                                    
         </div>
         <button class='w3-button w3-purple w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
