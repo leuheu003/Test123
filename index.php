@@ -158,7 +158,7 @@ $result = queryMysql($query);
         $iSize = $row['isize'];
         $iImage = $row['iimage'];
         
-        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
+        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/". $iImage . "'  width: '500px', height: '500px'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
