@@ -14,8 +14,8 @@
 
             }
             .footer{
-                width: 10%;
-                height: 30px;
+                width: 100%;
+                height: 100px;
                 background-color: greenyellow;
             }
             .main{
@@ -25,7 +25,7 @@
             }
 
             .image img{
-                width: 100%;
+                width: 20%;
             }
             .detail{
                 width: 100%;
@@ -63,8 +63,8 @@
                 box-sizing: border-box;
             }
             .iimage img{
-                width: 100%;
-                height : 50%;
+                width: 20%;
+                height : 30%;
             }
            
 
