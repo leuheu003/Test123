@@ -71,7 +71,7 @@
             .nav{
                 width: 100%;
                 height: 50px;
-                background-color: pink;
+                background-color: greenyellow;
             }
             .nav ul{
                 margin: 0;
@@ -282,6 +282,7 @@ $result = queryMysql($query);
             </div>
             <div class="footer">
                 <center<div>©2019 Copyright Pham Duc Long</div></center>
+                <center><img src="images/ToyStore.PNG"></center>
             </div>
         </div>
     </body>
