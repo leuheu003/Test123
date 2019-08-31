@@ -280,9 +280,9 @@ $result = queryMysql($query);
 
                         
             </div>
-           <center<div class="footer">
-                <div>©2019 Copyright Pham Duc Long</div>
-               </div></center>
+           <div class="footer">
+               <div><center>©2019 Copyright Pham Duc Long</center></div>
+               </div>
         </div>
     </body>
 </html>
