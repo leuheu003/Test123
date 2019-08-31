@@ -25,7 +25,7 @@
             }
 
             .image img{
-                width: 20%;
+                width: 100%;
             }
             .detail{
                 width: 100%;
@@ -63,8 +63,8 @@
                 box-sizing: border-box;
             }
             .iimage img{
-                width: 20%;
-                height : 30%;
+                width: 100%;
+                height : 50%;
             }
            
 
@@ -280,9 +280,9 @@ $result = queryMysql($query);
 
                         
             </div>
-            <div class="footer">
-                <center<div>©2019 Copyright Pham Duc Long<img src="images/footer1.jpg"></div></center>
-            </div>
+           <center<div class="footer">
+                <div>©2019 Copyright Pham Duc Long</div>
+               </div></center>
         </div>
     </body>
 </html>
