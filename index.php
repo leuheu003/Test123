@@ -177,7 +177,7 @@ $result = queryMysql($query);
               <h4>$isize</h4>                           
           </div>                                                    
         </div>
-        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iname').style.display='none';\">Close <i class='fa fa-remove'></i></button>
+        <button class='w3-button w3-green w3-section' onclick=\"document.getElementById('$iname').style.display='none';\">Close <i class='fa fa-remove'></i></button>
       </div>
     </div>";                                                                                       
     }
