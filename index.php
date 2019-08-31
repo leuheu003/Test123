@@ -4,10 +4,7 @@
         <title>ATN Toy Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style type="text/css">
-                  div{
-            background-image:url(C:/Users/pro_k/Documents/GitHub/Test123/images/ToyBackground.jpg);
-            }
+        <style>
             .container{
                 width: 100%;
                 margin: 0 auto;
