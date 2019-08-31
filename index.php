@@ -166,7 +166,7 @@ $result = queryMysql($query);
       <div class='w3-modal-content w3-animate-top w3-card-4'>
         <div class='w3-container w3-green w3-center w3-padding-20'> 
           <span onclick=\"document.getElementById('$iName').style.display='none';\"
-         class='w3-button w3-orange w3-xlarge w3-display-topright'>×</span>
+         class='w3-button w3-red w3-xlarge w3-display-topright'>×</span>
           <h2>$iName</h2>
         </div>
         <div class='w3-container w3-row'>
@@ -209,7 +209,7 @@ $result = queryMysql($query);
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
-        <div class='w3-container w3-orange w3-center w3-padding-20'> 
+        <div class='w3-container w3-pink w3-center w3-padding-20'> 
           <span onclick=\"document.getElementById('$iName').style.display='none';\"
          class='w3-button w3-red w3-xlarge w3-display-topright'>×</span>
           <h2>$iName</h2>
@@ -224,7 +224,7 @@ $result = queryMysql($query);
               <h4>$iSize</h4>                           
           </div>                                                    
         </div>
-        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
+        <button class='w3-button w3-pink w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
       </div>
     </div>";                                                                                       
     }
