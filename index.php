@@ -87,8 +87,7 @@
                 display: block;
             }
             .nav li{
-                float: contour;
-                float : left;
+                float: center;
             }
             .nav a:hover{
                 color: black;
