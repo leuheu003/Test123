@@ -88,6 +88,7 @@
             }
             .nav li{
                 float: contour;
+                float : left;
             }
             .nav a:hover{
                 color: black;
