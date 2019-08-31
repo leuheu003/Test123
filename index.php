@@ -99,7 +99,7 @@
             }
         </style>
     </head>
-    <body style="max-width: 1800px; background-image: url(images/ToyBackgroud.jpg)">
+    <body style="max-width: 1800px; background-image: url(./images/ToyBackgroud.jpg)">
         <?php
 require_once './functions.php';
 //load items
@@ -144,7 +144,6 @@ $result = queryMysql($query);
                     <?php
      require_once './functions.php';
      $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Lego%'  ORDER BY cname";
-     $result = queryMysql($query);
      $result = queryMysql($query);
      $result->setFetchMode(PDO::FETCH_ASSOC);
      $result->execute();
@@ -191,7 +190,6 @@ $result = queryMysql($query);
      require_once './functions.php';
     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Clay%'  ORDER BY cname";
      $result = queryMysql($query);
-     $result = queryMysql($query);
      $result->setFetchMode(PDO::FETCH_ASSOC);
      $result->execute();
      $resultSet = $result->fetchAll();
@@ -237,7 +235,6 @@ $result = queryMysql($query);
      require_once './functions.php';
     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Figure%'  ORDER BY cname";
      $result = queryMysql($query);
-     $result = queryMysql($query);
      $result->setFetchMode(PDO::FETCH_ASSOC);
      $result->execute();
      $resultSet = $result->fetchAll();
@@ -280,7 +277,7 @@ $result = queryMysql($query);
 
                         
             </div>
-           <<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="padding:5px; margin-top: auto">
+           <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="padding:5px; margin-top: auto">
             <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom" style="font-size: 16px;"><i class="fa fa-arrow-up w3-margin-right" style='font-size:25px'></i>To the top</a>
             <p class="w3-medium">Powered by Long</p>
         </footer>  
