@@ -87,7 +87,7 @@
                 display: block;
             }
             .nav li{
-                float: left;
+                float: bottom;
             }
             .nav a:hover{
                 color: black;
