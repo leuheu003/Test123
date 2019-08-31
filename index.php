@@ -174,7 +174,7 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iPrice$</h3>
+              <h3>Price: $iPrice$</h3>
               <p>$iDescription.</p>
               <h4>$iSize</h4>                           
           </div>                                                    
