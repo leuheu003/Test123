@@ -21,10 +21,11 @@
                 background-color: greenyellow;
             }
             .main{
+                width: 100%;
                 overflow: hidden;
                 background-color: white;
                 background-image: url(./images/ToyBackground.jpg);
-                max-width: 1800px;
+                
             }
 
             .image img{
