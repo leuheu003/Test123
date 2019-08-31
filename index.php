@@ -49,7 +49,7 @@
                 box-sizing: border-box;
             }
             .des{
-                color: green;
+                color: cyan;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
@@ -75,7 +75,7 @@
             .nav{
                 width: 100%;
                 height: 50px;
-                background-color: paleturquoise;
+                background-color: greenyellow;
             }
             .nav ul{
                 margin: 0;
