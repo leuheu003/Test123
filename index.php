@@ -4,6 +4,8 @@
         <title>ATN Toy Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
         <style>
             .container{
                 width: 100%;
@@ -97,7 +99,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="max-width: 1800px; background-image: url(images/ToyBackgroud.jpg)>
         <?php
 require_once './functions.php';
 //load items
@@ -112,11 +114,12 @@ $result = queryMysql($query);
                 
                 <div class="nav">
                     <ul>
+                        <center>
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="#Lego">Lego</a></li>
                         <li><a href="#Figure">Figure</a></li>
                         <li><a href="#Clay">Clay</a></li>
-                        <li><a href="./header.php">Manage</a></li>
+                        <li style="float: right;"><a href="./header.php">Manage</a></li>
                     </ul>
 
                 </div>
@@ -156,26 +159,26 @@ $result = queryMysql($query);
         $iSize = $row['isize'];
         $iImage = $row['iimage'];
         
-        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$iname').style.display='block'\" id='testimg' src='./images/item/". $iimage . "' width='100%'></div><div class='name'><h3>$iname</h3></div><h3>$iprice$</h3></div>"
+        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$Iname').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
-  <div id='$iname' class='w3-modal'>
+  <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
         <div class='w3-container w3-orange w3-center w3-padding-20'> 
-          <span onclick=\"document.getElementById('$iname').style.display='none';\"
+          <span onclick=\"document.getElementById('$iName').style.display='none';\"
          class='w3-button w3-orange w3-xlarge w3-display-topright'>×</span>
-          <h2>$iname</h2>
+          <h2>$iName</h2>
         </div>
         <div class='w3-container w3-row'>
           <div class='w3-half'>
-              <img src='./images/". $iimage . "' width='100%'>
+              <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iprice$</h3>
-              <p>$idescription.</p>
-              <h4>$isize</h4>                           
+              <h3>$iPrice$</h3>
+              <p>$iDescription.</p>
+              <h4>$iSize</h4>                           
           </div>                                                    
         </div>
-        <button class='w3-button w3-green w3-section' onclick=\"document.getElementById('$iname').style.display='none';\">Close <i class='fa fa-remove'></i></button>
+        <button class='w3-button w3-green w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
       </div>
     </div>";                                                                                       
     }
@@ -204,24 +207,24 @@ $result = queryMysql($query);
         
         echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
-  <div id='$iname' class='w3-modal'>
+  <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
         <div class='w3-container w3-orange w3-center w3-padding-20'> 
-          <span onclick=\"document.getElementById('$iname').style.display='none';\"
+          <span onclick=\"document.getElementById('$iName').style.display='none';\"
          class='w3-button w3-orange w3-xlarge w3-display-topright'>×</span>
-          <h2>$iname</h2>
+          <h2>$iName</h2>
         </div>
         <div class='w3-container w3-row'>
           <div class='w3-half'>
-              <img src='./images/". $iimage . "' width='100%'>
+              <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iprice$</h3>
-              <p>$idescription.</p>
-              <h4>$isize</h4>                           
+              <h3>$iPrice$</h3>
+              <p>$iDescription.</p>
+              <h4>$iSize</h4>                           
           </div>                                                    
         </div>
-        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iname').style.display='none';\">Close <i class='fa fa-remove'></i></button>
+        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
       </div>
     </div>";                                                                                       
     }
@@ -248,26 +251,26 @@ $result = queryMysql($query);
         $iSize = $row['isize'];
         $iImage = $row['iimage'];
         
-        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$iname').style.display='block'\" id='testimg' src='./images/item/". $iimage . "' width='100%'></div><div class='name'><h3>$iname</h3></div><h3>$iprice$</h3></div>"
+        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
-  <div id='$iname' class='w3-modal'>
+  <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
         <div class='w3-container w3-orange w3-center w3-padding-20'> 
-          <span onclick=\"document.getElementById('$iname').style.display='none';\"
+          <span onclick=\"document.getElementById('$iName').style.display='none';\"
          class='w3-button w3-orange w3-xlarge w3-display-topright'>×</span>
-          <h2>$iname</h2>
+          <h2>$iName</h2>
         </div>
         <div class='w3-container w3-row'>
           <div class='w3-half'>
-              <img src='./images/". $iimage . "' width='100%'>
+              <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <h3>$iprice$</h3>
-              <p>$idescription.</p>
-              <h4>$isize</h4>                           
+              <h3>$iPrice$</h3>
+              <p>$iDescription.</p>
+              <h4>$iSize</h4>                           
           </div>                                                    
         </div>
-        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iname').style.display='none';\">Close <i class='fa fa-remove'></i></button>
+        <button class='w3-button w3-orange w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Close <i class='fa fa-remove'></i></button>
       </div>
     </div>";                                                                                       
     }
@@ -277,9 +280,10 @@ $result = queryMysql($query);
 
                         
             </div>
-           <div class="footer">
-               <div><center>©2019 Copyright Pham Duc Long</center></div>
-               </div>
+           <<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="padding:5px; margin-top: auto">
+            <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom" style="font-size: 16px;"><i class="fa fa-arrow-up w3-margin-right" style='font-size:25px'></i>To the top</a>
+            <p class="w3-medium">Powered by Long</p>
+        </footer>  
         </div>
     </body>
 </html>
