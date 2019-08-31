@@ -87,7 +87,7 @@
                 display: block;
             }
             .nav li{
-                float: left;
+                float: right;
             }
             .nav a:hover{
                 color: black;
@@ -137,10 +137,8 @@ $result = queryMysql($query);
                 <div class="seperator">
 
                 </div>
-                <center>
                 <div class="list w3-row">
-                    <div class="" id="Lego"><h2>Lego</h2>
-                        </center>
+                    <div class="" id="Lego"><h2>Lego</h2>  
                     <?php
      require_once './functions.php';
      $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Lego%'  ORDER BY cname";
