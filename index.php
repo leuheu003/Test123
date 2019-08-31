@@ -14,8 +14,8 @@
 
             }
             .footer{
-                width: 100%;
-                height: 100px;
+                width: 10%;
+                height: 30px;
                 background-color: greenyellow;
             }
             .main{
