@@ -24,6 +24,7 @@
                 width: 100%;
                 overflow: hidden;
                 background-color: white;
+                background-image: url(./images/ToyBackground.jpg);
             }
 
             .image img{
@@ -99,7 +100,7 @@
             }
         </style>
     </head>
-    <body style="max-width: 1800px; background-image: url(./images/ToyBackground.jpg)">
+    <body>
         <?php
 require_once './functions.php';
 //load items
@@ -158,7 +159,7 @@ $result = queryMysql($query);
         $iSize = $row['isize'];
         $iImage = $row['iimage'];
         
-        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$Iname').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
+        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-green w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
