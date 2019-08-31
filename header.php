@@ -10,7 +10,7 @@ session_start();
         <title>ATN Manager</title>
     </head>
     <body>
-    <center><img src="images/ToyStore.png"</center>
+    <center><img src="images/ToyStore.PNG"</center>
     <?php
     require_once './functions.php';
         include_once './menu_admin.php';
