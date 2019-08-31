@@ -5,8 +5,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style type="text/css">
-            body{
-                background-image:url(C:/Users/pro_k/Documents/GitHub/Test123/images/ToyBackground.jpg);
+                  div{
+            border:1px solid gray;
+            padding:180px 50px;
+            font-size:30px;
+            background-image:url(C:/Users/pro_k/Documents/GitHub/Test123/images/ToyBackground.jpg);
             }
             .container{
                 width: 100%;
