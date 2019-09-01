@@ -278,7 +278,7 @@ $result = queryMysql($query);
                         
             </div>
            <footer class="w3-container w3-padding-64 w3-green w3-center w3-opacity w3-xlarge" style="padding:5px; margin-top: auto">
-            <a href="#" class="w3-button w3-pink w3-padding-large w3-margin-bottom" style="font-size: 16px;"><i class="fa fa-arrow-up w3-margin-right" style='font-size:25px'></i>To the top</a>
+            <a href="#" class="w3-button w3-pink w3-padding-large w3-margin-bottom" style="font-size: 16px;"><i class="fa fa-arrow-up w3-margin-right" style='font-size:25px'></i>T.O.P</a>
             <p class="w3-medium">@2019 Copyright Duc Long</p>
         </footer>  
         </div>
